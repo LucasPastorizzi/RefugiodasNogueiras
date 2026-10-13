@@ -288,6 +288,91 @@ footer a:hover{color:#fff}
 .fab:hover{transform:scale(1.08)}
 .fab svg{width:30px;height:30px}
 
+
+/* ================= mobile: ritmo, toque e leitura ================= */
+@media (max-width:600px){
+  body{font-size:16px;line-height:1.65}
+  .how,.fish,.block,.gallery,.info,.contact,.lucky{padding:72px 0}
+  .h2{font-size:clamp(32px,9vw,40px)}
+  .eyebrow{font-size:12px;margin-bottom:14px}
+  .lead{font-size:16px}
+  /* botões ocupam a largura: alvo de toque grande */
+  .hero .ctas,.final .ctas,.hours-card .btns{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center;padding:16px 22px;white-space:normal;text-align:center}
+  .split2>*{min-width:0}
+  .text>.btn,.lucky .text .btn,.block .text .btn,.how .text .btn{display:flex;width:100%}
+  /* hero */
+  .hero{padding:104px 0 32px}
+  .hero h1{font-size:clamp(42px,12.5vw,56px)}
+  .hero .sub{font-size:19px}
+  .hero p.desc{margin:18px 0 26px;font-size:16px}
+  .hero-meta{margin-top:22px}
+  .stars{font-size:13px}
+  /* como funciona */
+  .photo-stack{margin:4px auto 46px}
+  .photo-stack .float{left:-2%;bottom:-10%;width:44%;border-width:4px}
+  .features{grid-template-columns:1fr 1fr;gap:10px;margin-top:56px}
+  .feat{padding:18px 14px}
+  .feat svg{width:24px;height:24px;margin-bottom:10px}
+  .feat h3{font-size:17px}
+  .feat p{font-size:13.5px;line-height:1.5}
+  /* momentos */
+  .moments{padding:84px 0 36px}
+  .moments-head{margin-bottom:22px}
+  .moments-head .lead{display:none}
+  /* peixes: 2 colunas compactas */
+  .fish-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+  .fcard{aspect-ratio:3/4}
+  .fcard figcaption{left:12px;right:10px;bottom:10px}
+  .fcard h3{font-size:18px;line-height:1.1}
+  .fcard p{font-size:12px;line-height:1.35;margin-top:4px}
+  .fish .note{margin-top:22px;font-size:13px}
+  .ticker{margin-top:56px;padding:14px 0}
+  /* caixinhas */
+  .steps3 li{padding-left:46px}
+  .prize-board{padding:20px 18px}
+  .prize-board .tag{width:58px;height:58px;top:-18px;right:16px}
+  .prize-top .name{font-size:18px}
+  .prize-top .val{font-size:24px}
+  .badge-top{display:table;margin:6px 0 0}
+  /* restaurante */
+  .bar-card{min-height:0;padding:26px 22px;gap:28px}
+  .bar-card .big{font-size:48px}
+  .bar-card li{font-size:15px}
+  /* família / torneios */
+  .split2{gap:34px}
+  .list-check li{font-size:15px}
+  /* galeria */
+  .gal-rows{gap:10px;margin-top:36px}
+  .gal-row{gap:10px}
+  .gal-row a{width:200px}
+  /* antes de vir: ícone ao lado do texto, cartões mais baixos */
+  .info-grid{gap:10px;margin-top:36px}
+  .icard{display:grid;grid-template-columns:28px 1fr;column-gap:14px;padding:18px 16px}
+  .icard svg{grid-row:span 2;margin:2px 0 0;width:26px;height:26px}
+  .icard h3{font-size:19px;margin-bottom:4px}
+  .icard a,footer a{display:inline-block;padding:6px 0}
+  /* contato */
+  .contact-grid{margin-top:30px;gap:14px}
+  .map{min-height:300px;border-width:0}
+  .hours-card{padding:22px 18px}
+  .hours td{font-size:15px;padding:11px 0}
+  /* cta final */
+  .final{min-height:0;padding:96px 0}
+  .final h2{font-size:clamp(38px,11vw,48px)}
+  .final p{font-size:16px;margin:18px auto 28px}
+  /* rodapé */
+  footer{padding:48px 0 96px}
+  footer .wrap{gap:26px}
+  footer .cols{gap:28px;flex-direction:column}
+  .credit{flex-direction:column;gap:6px}
+  .fab{width:54px;height:54px;right:14px;bottom:14px}
+}
+@media (max-width:360px){
+  .brand{font-size:16px}.brand img{width:40px;height:40px}
+  .features,.fish-grid{grid-template-columns:1fr}
+  .fcard{aspect-ratio:4/3}
+}
 @media (prefers-reduced-motion:reduce){.mo-track{width:auto;overflow-x:auto}.loader{display:none}.status.open i,.scroll-cue::after{animation:none}}
 </style>
 </head>
@@ -682,6 +767,8 @@ $$('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.
 /* ===== rolagem e animação ===== */
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 gsap.registerPlugin(ScrollTrigger);
+// barra de endereço do celular aparece/some: não recalcular tudo a cada resize
+ScrollTrigger.config({ ignoreMobileResize: true });
 let lenis = null;
 if (!reduce) {
   lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
@@ -728,9 +815,10 @@ if (reduce) {
 
   /* revelação dos blocos de texto */
   gsap.set('.rv', { opacity: 0 });
+  const small = innerWidth < 600;
   ScrollTrigger.batch('.rv', {
-    start: 'top 88%', once: true,
-    onEnter: b => gsap.fromTo(b, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: .08, ease: 'power3.out', overwrite: true })
+    start: small ? 'top 96%' : 'top 88%', once: true,
+    onEnter: b => gsap.fromTo(b, { y: small ? 24 : 40, opacity: 0 }, { y: 0, opacity: 1, duration: small ? .7 : 1, stagger: small ? .05 : .08, ease: 'power3.out', overwrite: true })
   });
 
   /* fotos: cortina + parallax */

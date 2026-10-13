@@ -160,6 +160,32 @@ section{position:relative}
 @media (max-width:900px){.fish-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.fish-grid{grid-template-columns:1fr}}
 
+/* ---------- caixinhas lacradas ---------- */
+.lucky{background:var(--white);padding:clamp(90px,12vw,150px) 0;overflow:hidden}
+.lucky .split2{align-items:start}
+.lucky .text p{margin-top:18px}
+.lucky .text p:first-of-type{margin-top:26px}
+.steps3{list-style:none;margin-top:28px;counter-reset:st}
+.steps3 li{counter-increment:st;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
+.steps3 li::before{content:counter(st);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:var(--green-l);color:var(--green);font:600 17px/34px var(--serif);text-align:center}
+.steps3 b{display:block}
+.steps3 span{font-size:15px;color:var(--muted)}
+.lucky .text .btn{margin-top:30px}
+.prize-board{background:var(--sand);border:1px solid var(--line);border-radius:6px;padding:clamp(24px,3.4vw,42px);position:relative}
+.prize-board .tag{position:absolute;top:-22px;right:clamp(20px,4vw,40px);width:76px;height:76px;color:var(--wood)}
+.prize-board h3{font:500 clamp(24px,2.4vw,30px)/1.15 var(--serif);color:var(--head)}
+.prize-board .sub{font-size:14px;color:var(--muted);margin:6px 0 26px}
+.prize{padding:16px 0;border-top:1px solid var(--line)}
+.prize-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.prize-top .name{font:500 21px/1.2 var(--serif);color:var(--head)}
+.prize-top .val{font:600 clamp(26px,2.6vw,34px)/1 var(--serif);color:var(--green);white-space:nowrap}
+.prize-top .val small{font-size:.5em;font-weight:600;margin-right:4px;color:var(--muted)}
+.bar{height:10px;border-radius:99px;background:#e9e5dd;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),#7fae7a);transform-origin:left;width:var(--w)}
+.prize:first-of-type .bar i{background:linear-gradient(90deg,#b98a2e,#e6bf5c)}
+.prize-board .fine{font-size:13px;color:var(--muted);margin-top:18px}
+.badge-top{display:inline-block;margin-left:8px;font:700 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;background:#e6bf5c;color:#3a2a06;padding:4px 7px;border-radius:3px;vertical-align:4px}
+
 /* ---------- restaurante / kids / torneios ---------- */
 .block{padding:clamp(90px,12vw,150px) 0}
 .block.white{background:var(--white)}
@@ -260,6 +286,7 @@ footer a:hover{color:#fff}
   <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 0 1 0 6M18 14c1.8.7 3 2.4 3 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
   <symbol id="cup" viewBox="0 0 120 120"><path d="M36 30h40v14c0 22-6 40-20 40S36 66 36 44z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M76 40h8a10 10 0 0 1 0 20h-9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M56 84v14M42 100h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="seal" viewBox="0 0 64 64"><path d="M32 4l6 5 8-1 3 7 7 4-1 8 5 6-5 6 1 8-7 4-3 7-8-1-6 5-6-5-8 1-3-7-7-4 1-8-5-6 5-6-1-8 7-4 3-7 8 1z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="32" cy="32" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M26 32.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
 </svg>
 
@@ -272,6 +299,7 @@ footer a:hover{color:#fff}
       <a href="#inicio">Início</a>
       <a href="#pesca">Pesca</a>
       <a href="#peixes">Peixes</a>
+      <a href="#caixinhas">Recompensas</a>
       <a href="#restaurante">Restaurante</a>
       <a href="#familia">Família</a>
       <a href="#torneios">Torneios</a>
@@ -351,6 +379,35 @@ footer a:hover{color:#fff}
       <div class="tk-track">
         <span>Pesca esportiva</span><span>Bar & restaurante</span><span>Espaço kids</span><span>Torneios</span><span>Farroupilha · RS</span>
         <span>Pesca esportiva</span><span>Bar & restaurante</span><span>Espaço kids</span><span>Torneios</span><span>Farroupilha · RS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAIXINHAS LACRADAS -->
+  <section class="lucky" id="caixinhas">
+    <div class="wrap">
+      <div class="split2">
+        <div class="text">
+          <span class="eyebrow rv">Caixinhas lacradas</span>
+          <h2 class="h2 rv">Fisgou um peixe sortudo?<br><em>Ganha recompensa</em></h2>
+          <p class="rv">No lago do Refúgio nadam alguns <b>peixes sortudos</b>, marcados com <b>lacre</b>. Quem fisgar um deles leva a <b>recompensa em dinheiro</b> da espécie — além da foto e da história pra contar.</p>
+          <ul class="steps3 rv">
+            <li><b>Pesque normalmente</b><span>Os peixes lacrados estão soltos no lago, junto com os outros.</span></li>
+            <li><b>Achou o lacre?</b><span>Chame a equipe na hora para conferir o peixe e o lacre.</span></li>
+            <li><b>Receba a recompensa</b><span>O valor depende da espécie — veja a tabela ao lado.</span></li>
+          </ul>
+          <a class="btn btn-green js-wa rv" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Tirar dúvidas sobre as caixinhas</a>
+        </div>
+        <div class="prize-board rv">
+          <svg class="tag"><use href="#seal"/></svg>
+          <h3>Tabela de recompensas</h3>
+          <p class="sub">Valor pago por peixe lacrado fisgado</p>
+          <div class="prize"><div class="prize-top"><span class="name">Carpa Koi<span class="badge-top">maior prêmio</span></span><span class="val"><small>R$</small><span class="js-money" data-v="260">0</span></span></div><div class="bar"><i style="--w:100%"></i></div></div>
+          <div class="prize"><div class="prize-top"><span class="name">Carpa Cabeçuda</span><span class="val"><small>R$</small><span class="js-money" data-v="240">0</span></span></div><div class="bar"><i style="--w:92%"></i></div></div>
+          <div class="prize"><div class="prize-top"><span class="name">Carpa Húngara</span><span class="val"><small>R$</small><span class="js-money" data-v="220">0</span></span></div><div class="bar"><i style="--w:85%"></i></div></div>
+          <div class="prize"><div class="prize-top"><span class="name">Traíra</span><span class="val"><small>R$</small><span class="js-money" data-v="100">0</span></span></div><div class="bar"><i style="--w:38%"></i></div></div>
+          <p class="fine">Valores divulgados pelo Refúgio. Regras e disponibilidade de peixes lacrados: confirme com a equipe.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -601,6 +658,7 @@ lenis ? lenis.on('scroll', ({ scroll }) => onScroll(scroll)) : addEventListener(
 
 if (reduce) {
   document.querySelector('.loader').remove();
+  $$('.js-money').forEach(el => el.textContent = el.dataset.v + ',00');
 } else {
   /* ----- abertura ----- */
   lenis.stop();
@@ -656,6 +714,14 @@ if (reduce) {
   /* galeria: duas fileiras andando em sentidos opostos com a rolagem */
   gsap.fromTo('.gal-row.r1', { x: () => -innerWidth * .05 }, { x: () => -(document.querySelector('.gal-row.r1').scrollWidth - innerWidth * .95), ease: 'none', scrollTrigger: { trigger: '.gallery', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
   gsap.fromTo('.gal-row.r2', { x: () => -(document.querySelector('.gal-row.r2').scrollWidth - innerWidth * .95) }, { x: () => -innerWidth * .05, ease: 'none', scrollTrigger: { trigger: '.gallery', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+
+  /* caixinhas: barras crescem e valores contam */
+  gsap.from('.bar i', { scaleX: 0, duration: 1.4, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.prize-board', start: 'top 75%' } });
+  $$('.js-money').forEach(el => {
+    const o = { v: 0 };
+    gsap.to(o, { v: +el.dataset.v, duration: 1.6, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(o.v) + ',00', scrollTrigger: { trigger: '.prize-board', start: 'top 75%' } });
+  });
+  gsap.fromTo('.prize-board .tag', { rotate: -30, scale: .6 }, { rotate: 12, scale: 1, ease: 'none', scrollTrigger: { trigger: '.lucky', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   /* cartão do bar */
   gsap.to('.bar-card svg.bg', { rotate: 25, yPercent: 15, ease: 'none', scrollTrigger: { trigger: '.bar-card', start: 'top bottom', end: 'bottom top', scrub: true } });

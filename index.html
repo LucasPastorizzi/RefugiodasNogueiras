@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refúgio das Nogueiras — Pesca Esportiva em Farroupilha</title>
+<meta name="description" content="Pesca esportiva com mais de 10 espécies, bar & restaurante e espaço kids no interior de Farroupilha, RS. Reserve pelo WhatsApp.">
+<meta property="og:title" content="Refúgio das Nogueiras — Pesca Esportiva">
+<meta property="og:description" content="+ de 10 espécies, bar & restaurante e espaço kids. Linha Vicentina, Farroupilha · RS.">
+<meta property="og:image" content="img/dourado.jpg">
+<meta name="theme-color" content="#141a14">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Refúgio das Nogueiras — Pesca Esportiva",
+  "description": "Pesca esportiva com mais de 10 espécies, bar & restaurante e espaço kids.",
+  "image": "img/dourado.jpg",
+  "telephone": "+55 54 98106-1529",
+  "address": { "@type": "PostalAddress", "streetAddress": "Interior - Linha Vicentina", "postalCode": "95181-899", "addressLocality": "Farroupilha", "addressRegion": "RS", "addressCountry": "BR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": -29.2202833, "longitude": -51.3836698 },
+  "openingHours": ["Mo 07:30-18:00", "We-Th 07:30-18:00", "Fr-Sa 07:30-22:00", "Su 07:30-20:00"],
+  "sameAs": ["https://www.instagram.com/refugio_dasnogueiras/"]
+}
+</script>
+<style>
+:root{
+  --night:#121812; --forest:#1b251c; --moss:#435636; --leaf:#6f8a4e;
+  --bark:#2e1d12; --walnut:#6b4227; --copper:#c47c3d; --gold:#e6ab3c;
+  --cream:#f2e8d4; --paper:#e8dbc0; --ink:#1c150f; --muted:#a39a87;
+  --serif:'Fraunces', Georgia, serif; --sans:'Instrument Sans', system-ui, sans-serif;
+  --gut:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--night);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--copper);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6vw,88px);line-height:.98;letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1}
+.h2 em{font-style:italic;color:var(--gold);font-weight:400}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 28px;border-radius:999px;font:600 15px/1 var(--sans);letter-spacing:.01em;transition:background .3s,color .3s,box-shadow .3s;will-change:transform;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 10px 30px -10px rgba(230,171,60,.6)}
+.btn-gold:hover{background:var(--cream)}
+.btn-line{border:1px solid rgba(242,232,212,.35);color:var(--cream)}
+.btn-line:hover{background:var(--cream);color:var(--ink)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:100;background:var(--bark);display:grid;place-items:center;color:var(--cream)}
+.loader .medal{width:min(220px,52vw);color:var(--copper)}
+.loader .medal .draw{stroke-dasharray:1;stroke-dashoffset:1}
+.loader .medal text{opacity:0}
+.loader-count{position:absolute;bottom:clamp(20px,5vh,48px);left:var(--gut);right:var(--gut);display:flex;justify-content:space-between;font:500 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.loader-count b{font:400 clamp(48px,9vw,120px)/.8 var(--serif);color:var(--cream);letter-spacing:-.03em}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .45s cubic-bezier(.2,.7,.2,1),background .3s}
+.nav.hide{transform:translateY(-110%)}
+.nav.solid{background:rgba(18,24,18,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font:600 15px/1.05 var(--serif);letter-spacing:.02em}
+.brand svg{width:42px;height:42px;color:var(--copper);flex:none}
+.brand small{display:block;font:600 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.nav-links{display:flex;gap:28px;font-size:14px;color:rgba(242,232,212,.75)}
+.nav-links a:hover{color:var(--gold)}
+.nav .btn{padding:12px 20px;font-size:14px}
+@media (max-width:900px){.nav-links{display:none}}
+@media (max-width:420px){.nav .btn span{display:none}.nav .btn{padding:12px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 90px;background:radial-gradient(120% 80% at 75% 20%,#2a3a27 0%,var(--forest) 45%,var(--night) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,80px);align-items:center;position:relative;z-index:2}
+.status{display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;background:rgba(242,232,212,.07);border:1px solid rgba(242,232,212,.14);font-size:13px;font-weight:500;margin-bottom:28px}
+.status i{width:9px;height:9px;border-radius:50%;background:#7a7a6a;box-shadow:0 0 0 0 rgba(130,200,110,.6)}
+.status.open i{background:#8fd16a;animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(130,200,110,0)}100%{box-shadow:0 0 0 0 rgba(130,200,110,0)}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(50px,8.4vw,132px);line-height:.9;letter-spacing:-.035em;font-variation-settings:"SOFT" 100,"WONK" 1}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.w>span{display:inline-block}
+.hero p.lead{max-width:470px;margin:28px 0 36px;font-size:clamp(16px,1.4vw,19px);color:rgba(242,232,212,.78)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{position:relative;aspect-ratio:4/5;width:92%;max-width:500px;justify-self:end;margin-right:2%}
+.hero-art .ph{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.hero-art .ph img{width:100%;height:100%;object-fit:cover}
+.hero-art .ph1{inset:0 0 14% 12%}
+.hero-art .ph2{width:46%;aspect-ratio:1;left:0;bottom:0;border:6px solid var(--forest);transform:rotate(-6deg)}
+.hero-art .seal{position:absolute;right:-2%;top:-6%;z-index:2;width:clamp(96px,11vw,140px);color:var(--gold);animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.waves{position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;opacity:.35;pointer-events:none}
+.waves path{fill:none;stroke:var(--leaf);stroke-width:1.2}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint i{width:1px;height:38px;background:linear-gradient(var(--muted),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:860px){
+  .hero{padding-top:100px}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:400px;justify-self:center;width:88%;margin-top:10px}
+  .scroll-hint{display:none}
+}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;padding:20px 0;transform:rotate(-1.5deg);margin:-14px -10px 0;position:relative;z-index:3}
+.mq-track{display:flex;width:max-content}
+.mq-track span{font:italic 500 clamp(26px,3.6vw,48px)/1 var(--serif);padding:0 26px;display:flex;align-items:center;gap:52px;white-space:nowrap}
+.mq-track span::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--bark)}
+
+/* ---------- manifesto ---------- */
+.manifesto{background:var(--cream);color:var(--ink);padding:clamp(110px,16vw,200px) 0;position:relative;overflow:hidden}
+.manifesto .wrap{display:grid;grid-template-columns:110px 1fr;gap:clamp(16px,4vw,60px)}
+.line-svg{width:100%;height:100%;min-height:340px;color:var(--walnut)}
+.line-svg path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.manifesto .eyebrow{color:var(--walnut);margin-bottom:28px}
+.manifesto p.big{font-family:var(--serif);font-size:clamp(28px,4.2vw,62px);line-height:1.12;letter-spacing:-.02em;font-weight:400}
+.manifesto p.big .mw{opacity:.14}
+.manifesto p.big em{font-style:italic;color:var(--walnut)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(70px,9vw,120px);border-top:1px solid rgba(28,21,15,.18)}
+.stat{padding:28px 20px 0 0}
+.stat+.stat{padding-left:20px;border-left:1px solid rgba(28,21,15,.18)}
+.stat b{display:block;font:400 clamp(44px,6vw,84px)/1 var(--serif);letter-spacing:-.03em;color:var(--walnut)}
+.stat>span{font-size:14px;color:#5b4d3e;display:block;margin-top:10px}
+@media (max-width:760px){
+  .manifesto .wrap{grid-template-columns:44px 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){padding-left:0;border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(28,21,15,.18);margin-top:24px}
+}
+
+/* ---------- species (horizontal) ---------- */
+.species{background:var(--night);overflow:hidden;position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.sp-head{padding:clamp(86px,12vh,130px) 0 clamp(24px,4vh,50px)}
+.sp-head .wrap{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.sp-head p{max-width:360px;color:rgba(242,232,212,.7)}
+.sp-track{display:flex;gap:clamp(16px,2vw,28px);padding:0 var(--gut) clamp(30px,6vh,70px);width:max-content}
+.sp-card{position:relative;height:min(58vh,560px);min-height:340px;aspect-ratio:3/4;border-radius:24px;overflow:hidden;flex:none;background:var(--forest)}
+.sp-card img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.sp-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,16,12,.92))}
+.sp-card .meta{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.sp-card .num{position:absolute;top:20px;left:24px;z-index:2;font:500 12px/1 var(--sans);letter-spacing:.2em;color:var(--gold)}
+.sp-card h3{font:400 clamp(30px,3vw,44px)/1 var(--serif);letter-spacing:-.02em}
+.sp-card h3 em{font-style:italic;color:var(--gold)}
+.sp-card p{font-size:14px;color:rgba(242,232,212,.72);margin-top:8px}
+.sp-card.cta{background:var(--copper);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:28px}
+.sp-card.cta::after{display:none}
+.sp-card.cta h3{font-size:clamp(34px,4vw,60px);line-height:.95}
+.sp-card.cta .btn{align-self:flex-start;background:var(--ink);color:var(--cream)}
+
+/* ---------- experiences (stacking) ---------- */
+.exp{background:var(--forest);padding:clamp(100px,12vw,160px) 0 clamp(60px,8vw,100px)}
+.exp-head{text-align:center;margin-bottom:clamp(50px,7vw,90px)}
+.exp-head .eyebrow{justify-content:center}
+.exp-head .h2{margin-top:20px}
+.stack{display:flex;flex-direction:column;gap:clamp(20px,4vh,40px)}
+.scard{position:sticky;top:clamp(90px,12vh,120px);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:min(560px,70vh);transform-origin:center top;box-shadow:0 -20px 60px -20px rgba(0,0,0,.5)}
+.scard .txt{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.scard .tag{font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.scard h3{font:400 clamp(38px,5vw,76px)/.95 var(--serif);letter-spacing:-.03em}
+.scard h3 em{font-style:italic}
+.scard p{max-width:420px;font-size:clamp(15px,1.2vw,17px);opacity:.85}
+.scard .pic{position:relative;overflow:hidden}
+.scard .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scard .dim{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:3}
+.s1{background:var(--cream);color:var(--ink)} .s1 h3 em{color:var(--walnut)}
+.s2{background:var(--bark);color:var(--cream)} .s2 h3 em{color:var(--gold)}
+.s3{background:var(--gold);color:var(--ink)}
+.s4{background:var(--moss);color:var(--cream)} .s4 h3 em{color:var(--gold)}
+.s2 .pic{background:radial-gradient(circle at 50% 45%,#5b3a22,#2e1d12 70%);display:grid;place-items:center}
+.s2 .pic svg{width:58%;color:var(--gold);position:relative}
+@media (max-width:760px){
+  .scard{grid-template-columns:1fr;grid-template-rows:auto 220px;min-height:0;top:80px}
+  .scard .pic{order:2}
+}
+
+/* ---------- day (sticky steps) ---------- */
+.day{background:var(--cream);color:var(--ink);padding:clamp(100px,12vw,160px) 0}
+.day .eyebrow{color:var(--walnut)}
+.day-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,6vw,100px);margin-top:clamp(40px,6vw,80px)}
+.frame{position:sticky;top:14vh;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:var(--bark)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .7s,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.frame img.on{opacity:1;transform:scale(1)}
+.frame .cap{position:absolute;left:16px;bottom:16px;z-index:2;background:rgba(18,24,18,.75);backdrop-filter:blur(8px);color:var(--cream);padding:8px 14px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.steps{display:flex;flex-direction:column}
+.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;padding:20px 0;opacity:.28;transition:opacity .5s}
+.step.on{opacity:1}
+.step .n{font:italic 400 clamp(20px,2vw,28px)/1 var(--serif);color:var(--copper);margin-bottom:14px}
+.step h3{font:400 clamp(30px,3.6vw,54px)/1 var(--serif);letter-spacing:-.02em}
+.step p{max-width:420px;margin-top:14px;color:#4c4034}
+@media (max-width:760px){
+  .day-grid{grid-template-columns:.8fr 1fr;gap:16px}
+  .frame{top:96px;border-radius:16px}
+  .frame .cap{display:none}
+  .step{min-height:55vh}
+  .step h3{font-size:26px}
+  .step p{font-size:14px}
+}
+
+/* ---------- campeonatos ---------- */
+.champ{background:var(--bark);padding:clamp(100px,12vw,160px) 0;position:relative;overflow:hidden}
+.champ .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.champ-pic{border-radius:26px;overflow:hidden;aspect-ratio:1;position:relative}
+.champ-pic img{width:100%;height:120%;object-fit:cover;position:absolute;top:-10%}
+.champ p{color:rgba(242,232,212,.75);margin:24px 0 34px;max-width:440px}
+.champ .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trophy-bg{position:absolute;right:-6vw;bottom:-8vw;width:44vw;max-width:620px;color:rgba(196,124,61,.08);pointer-events:none}
+@media (max-width:860px){.champ .wrap{grid-template-columns:1fr}}
+
+/* ---------- mural ---------- */
+.mural{background:var(--night);padding:clamp(100px,12vw,160px) 0}
+.mural-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px)}
+.grid a{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1;display:block}
+.grid a.tall{grid-row:span 2;aspect-ratio:auto}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.grid a:hover img{transform:scale(1.06)}
+.grid a .ig{position:absolute;inset:0;display:grid;place-items:center;background:rgba(18,24,18,.45);opacity:0;transition:opacity .3s}
+.grid a:hover .ig{opacity:1}
+.grid a .ig svg{width:34px;height:34px}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- visit ---------- */
+.visit{background:var(--paper);color:var(--ink);padding:clamp(100px,12vw,160px) 0}
+.visit .eyebrow{color:var(--walnut)}
+.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,70px);margin-top:clamp(36px,5vw,60px)}
+.map{border-radius:24px;overflow:hidden;min-height:420px;background:#d8c9aa;position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.35) saturate(.85)}
+.info h3{font:400 clamp(28px,3vw,40px)/1.05 var(--serif);letter-spacing:-.02em}
+.info .addr{margin:12px 0 30px;color:#4c4034}
+.hours{width:100%;border-collapse:collapse;margin-bottom:30px}
+.hours td{padding:12px 0;border-bottom:1px solid rgba(28,21,15,.14);font-size:15px}
+.hours td:last-child{text-align:right;color:#4c4034}
+.hours tr.today td{font-weight:700;color:var(--ink)}
+.hours tr.today td:first-child::after{content:"hoje";margin-left:10px;font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:4px 8px;border-radius:99px;vertical-align:2px}
+.info .btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ink:hover{background:var(--walnut)}
+.btn-line-ink{border:1px solid rgba(28,21,15,.3)}
+.btn-line-ink:hover{background:var(--ink);color:var(--cream)}
+.note{font-size:12px;color:#7a6b58;margin-top:18px}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}.map{min-height:320px}}
+
+/* ---------- final cta ---------- */
+.final{background:var(--copper);color:var(--ink);padding:clamp(110px,14vw,190px) 0;text-align:center;position:relative;overflow:hidden}
+.final h2{font:400 clamp(56px,12vw,190px)/.86 var(--serif);letter-spacing:-.045em;font-variation-settings:"SOFT" 100,"WONK" 1}
+.final h2 em{font-style:italic;color:var(--cream)}
+.final p{max-width:480px;margin:28px auto 40px;font-size:18px}
+.final .ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.final .btn-big{padding:22px 36px;font-size:17px}
+
+footer{background:var(--night);padding:60px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .cols{display:flex;gap:clamp(30px,6vw,80px);flex-wrap:wrap}
+footer h4{font:600 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);margin-bottom:14px}
+footer li{list-style:none;margin-bottom:8px}
+footer a:hover{color:var(--gold)}
+.credit{width:100%;margin-top:40px;padding-top:24px;border-top:1px solid rgba(242,232,212,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transform:scale(0);transition:transform .4s cubic-bezier(.3,1.5,.5,1)}
+.fab.show{transform:scale(1)}
+.fab svg{width:30px;height:30px}
+
+@media (prefers-reduced-motion:reduce){
+  .loader{display:none}
+  .hero-art .seal,.status.open i,.scroll-hint i{animation:none}
+  .manifesto p.big .mw{opacity:1}
+  .step{opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- símbolo: o medalhão de madeira do perfil, redesenhado em vetor -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="arcTop" d="M34 100a66 66 0 0 1 132 0"/>
+    <path id="arcBot" d="M24 100a76 76 0 0 0 152 0"/>
+  </defs>
+  <symbol id="tree" viewBox="0 0 100 80">
+    <path d="M50 78V46M50 58l-10-9M50 54l11-10M50 64l-7 5M50 66l7 4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M50 6c-9 0-15 6-16 12-8-1-15 5-15 13 0 2 0 3 1 5-5 2-8 6-8 11 0 7 6 11 13 11 4 0 7-1 9-4 4 3 10 4 16 4s12-1 16-4c2 3 5 4 9 4 7 0 13-4 13-11 0-5-3-9-8-11 1-2 1-3 1-5 0-8-7-14-15-13-1-6-7-12-16-12z" fill="currentColor"/>
+  </symbol>
+  <symbol id="fish" viewBox="0 0 120 60">
+    <path d="M8 34c18-22 50-26 76-10l18-14-4 22 6 20-20-12C58 56 26 54 8 34z" fill="currentColor"/>
+    <circle cx="30" cy="30" r="3.4" fill="#2e1d12"/>
+    <path d="M44 22c6 6 6 18 0 24" fill="none" stroke="#2e1d12" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="medal" viewBox="0 0 200 200">
+    <circle class="draw" cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="3" pathLength="1"/>
+    <circle class="draw" cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.4" pathLength="1"/>
+    <text font-family="Fraunces, Georgia, serif" font-weight="700" font-size="15" letter-spacing="1.6" fill="currentColor"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">REFÚGIO DAS NOGUEIRAS</textPath></text>
+    <text font-family="Fraunces, Georgia, serif" font-weight="700" font-size="14" letter-spacing="2.4" fill="currentColor"><textPath href="#arcBot" startOffset="50%" text-anchor="middle" dy="-3">PESCA ESPORTIVA</textPath></text>
+    <path class="draw" d="M54 106h92" fill="none" stroke="currentColor" stroke-width="2" pathLength="1"/>
+    <use href="#tree" x="66" y="44" width="68" height="56" color="currentColor"/>
+    <use href="#fish" x="64" y="110" width="72" height="36" color="currentColor"/>
+    <path class="draw" d="M58 150c8 4 16 4 24 0s16-4 24 0 16 4 24 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" pathLength="1"/>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></symbol>
+  <symbol id="ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2.8h10A4.2 4.2 0 0 1 21.2 7v10a4.2 4.2 0 0 1-4.2 4.2H7A4.2 4.2 0 0 1 2.8 17V7A4.2 4.2 0 0 1 7 2.8z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></symbol>
+</svg>
+
+<div class="loader" aria-hidden="true">
+  <svg class="medal"><use href="#medal"/></svg>
+  <div class="loader-count"><span>Farroupilha · RS</span><b><span class="ct">0</span>%</b></div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand" aria-label="Refúgio das Nogueiras — início">
+      <svg><use href="#medal"/></svg>
+      <span>Refúgio das Nogueiras<small>Pesca esportiva</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#especies">Espécies</a>
+      <a href="#refugio">O refúgio</a>
+      <a href="#campeonatos">Campeonatos</a>
+      <a href="#visite">Como chegar</a>
+    </nav>
+    <a class="btn btn-gold js-wa magnetic" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span>Reservar</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="wrap">
+      <div>
+        <div class="status js-status"><i></i><span>Consultando horário…</span></div>
+        <h1 class="split">O refúgio de quem <em>pesca</em> de verdade.</h1>
+        <p class="lead fade-up">Pesca esportiva com mais de 10 espécies, bar & restaurante e espaço kids — no interior de Farroupilha, entre nogueiras, lago e serra.</p>
+        <div class="hero-ctas fade-up">
+          <a class="btn btn-gold js-wa magnetic" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Reservar pelo WhatsApp</a>
+          <a class="btn btn-line" href="#especies">Ver as espécies <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="ph ph1"><img src="img/dourado.jpg" alt="Pescador segurando um dourado na beira do lago" width="640" height="480"></div>
+        <div class="ph ph2"><img src="img/carpa-espelho.jpg" alt="Carpa espelho fisgada no lago" width="640" height="480"></div>
+        <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="sealPath" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+          <text font-family="Instrument Sans, sans-serif" font-weight="600" font-size="15.5" letter-spacing="4.2" fill="currentColor"><textPath href="#sealPath">+ DE 10 ESPÉCIES · PESCA ESPORTIVA · </textPath></text>
+          <use href="#fish" x="62" y="80" width="76" height="40" color="currentColor"/>
+        </svg>
+      </div>
+    </div>
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wv" d="M0 40c120 18 240 18 360 0s240-18 360 0 240 18 360 0 240-18 360 0 240 18 360 0 240-18 360 0"/>
+      <path class="wv" d="M0 72c120 18 240 18 360 0s240-18 360 0 240 18 360 0 240-18 360 0 240 18 360 0 240-18 360 0" opacity=".6"/>
+      <path class="wv" d="M0 102c120 18 240 18 360 0s240-18 360 0 240 18 360 0 240-18 360 0 240 18 360 0 240-18 360 0" opacity=".35"/>
+    </svg>
+    <div class="scroll-hint">Role<i></i></div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <span>Pesca esportiva</span><span>+ de 10 espécies</span><span>Bar & restaurante</span><span>Espaço kids</span><span>Campeonatos</span><span>Farroupilha · RS</span>
+      <span>Pesca esportiva</span><span>+ de 10 espécies</span><span>Bar & restaurante</span><span>Espaço kids</span><span>Campeonatos</span><span>Farroupilha · RS</span>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="wrap">
+      <svg class="line-svg" viewBox="0 0 110 600" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+        <path class="fline" d="M55 0V470" pathLength="1"/>
+        <path class="fline" d="M55 470v58c0 22-30 22-30 2" pathLength="1"/>
+        <path class="fline" d="M25 530l-6-10" pathLength="1"/>
+      </svg>
+      <div>
+        <span class="eyebrow">O Refúgio</span>
+        <p class="big js-words">A linha estica, o carretel canta e o lago devolve o silêncio. Aqui a pescaria é <em>esporte</em>: a briga, a foto com o troféu e a vontade de voltar no próximo fim de semana — com a família, os amigos e uma gelada esperando no bar.</p>
+        <div class="stats">
+          <div class="stat"><b><span class="js-count" data-to="10">0</span>+</b><span>espécies no lago</span></div>
+          <div class="stat"><b>Bar</b><span>& restaurante</span></div>
+          <div class="stat"><b>Kids</b><span>espaço para a criançada</span></div>
+          <div class="stat"><b>5,0<small style="font-size:.45em;color:var(--gold)"> ★</small></b><span>nota no Google · 36 avaliações</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPÉCIES -->
+  <section class="species" id="especies">
+    <div class="sp-head">
+      <div class="wrap">
+        <div><span class="eyebrow">No lago</span><h2 class="h2" style="margin-top:20px">Escolha a sua <em>briga.</em></h2></div>
+        <p>Do dourado que salta na linha às carpas que testam o braço — são mais de 10 espécies esperando a sua isca.</p>
+      </div>
+    </div>
+    <div class="sp-track">
+      <article class="sp-card"><span class="num">01</span><img src="img/dourado-2.jpg" alt="Dourado" loading="lazy" width="640" height="480"><div class="meta"><h3>Dourado</h3><p>O rei da briga. Salta, corre e não se entrega fácil.</p></div></article>
+      <article class="sp-card"><span class="num">02</span><img src="img/carpa-espelho.jpg" alt="Carpa espelho" loading="lazy" width="640" height="480"><div class="meta"><h3>Carpa <em>espelho</em></h3><p>Escamas grandes, peso de respeito.</p></div></article>
+      <article class="sp-card"><span class="num">03</span><img src="img/carpa-hungara.jpg" alt="Carpa húngara" loading="lazy" width="640" height="480"><div class="meta"><h3>Carpa <em>húngara</em></h3><p>Dourada, forte e teimosa no fundo.</p></div></article>
+      <article class="sp-card"><span class="num">04</span><img src="img/traira.jpg" alt="Traíra" loading="lazy" width="640" height="480"><div class="meta"><h3>Traíra</h3><p>Dentes afiados e ataque certeiro.</p></div></article>
+      <article class="sp-card"><span class="num">05</span><img src="img/carpa-gigante.jpg" alt="Carpa de grande porte" loading="lazy" width="640" height="480"><div class="meta"><h3>As <em>gigantes</em></h3><p>Carpas de grande porte para a foto da temporada.</p></div></article>
+      <article class="sp-card cta"><span class="eyebrow" style="color:var(--ink)">E tem mais</span><h3>+ de 10 espécies esperando.</h3><a class="btn js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Garantir meu lugar</a></article>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIAS -->
+  <section class="exp" id="refugio">
+    <div class="wrap">
+      <div class="exp-head"><span class="eyebrow">Um dia inteiro</span><h2 class="h2">Mais que pescaria.<br><em>Um refúgio.</em></h2></div>
+      <div class="stack">
+        <article class="scard s1"><div class="txt"><span class="tag">01 · Pesca esportiva</span><div><h3>Lago, linha e <em>adrenalina.</em></h3><p style="margin-top:18px">Pontos de pesca à beira d'água, peixe de verdade e aquele momento em que o molinete dispara.</p></div></div><div class="pic"><img src="img/carpa-rede.jpg" alt="Carpa recém-tirada da água" loading="lazy"></div><span class="dim"></span></article>
+        <article class="scard s2"><div class="txt"><span class="tag">02 · Cozinha & bar</span><div><h3>Petisco, almoço e <em>gelada.</em></h3><p style="margin-top:18px">Entre um arremesso e outro, o bar & restaurante segura a fome e a sede de quem pesca — e de quem só veio acompanhar.</p></div></div><div class="pic"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M36 30h40v14c0 22-6 40-20 40S36 66 36 44z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M76 40h8a10 10 0 0 1 0 20h-9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M40 44h32" stroke="currentColor" stroke-width="2" opacity=".6"/><path d="M56 84v14M42 100h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="56" r="2.5" fill="currentColor"/><circle cx="60" cy="64" r="2" fill="currentColor"/><circle cx="54" cy="70" r="1.6" fill="currentColor"/></svg></div><span class="dim"></span></article>
+        <article class="scard s3"><div class="txt"><span class="tag">03 · Espaço kids</span><div><h3>A primeira fisgada <em>a gente nunca esquece.</em></h3><p style="margin-top:18px">Espaço kids para a criançada se divertir — e um lago inteiro para ela descobrir a pesca com a família.</p></div></div><div class="pic"><img src="img/kids.jpg" alt="Menino segurando um peixe à beira do lago com neblina" loading="lazy"></div><span class="dim"></span></article>
+        <article class="scard s4"><div class="txt"><span class="tag">04 · Clientes & troféus</span><div><h3>Cada peixe vira <em>história.</em></h3><p style="margin-top:18px">A foto com o troféu vai para o nosso mural no Instagram. Marque o @refugio_dasnogueiras e entre para a galeria.</p></div></div><div class="pic"><img src="img/cliente-carpa.jpg" alt="Cliente segurando uma carpa na beira do lago" loading="lazy"></div><span class="dim"></span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO É O DIA -->
+  <section class="day">
+    <div class="wrap">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="h2" style="margin-top:20px">Seu dia no <em style="color:var(--walnut)">Refúgio</em>.</h2>
+      <div class="day-grid">
+        <div>
+          <div class="frame">
+            <img class="on" src="img/lago.jpg" alt="Lago com aguapés" loading="lazy">
+            <img src="img/dourado-grama.jpg" alt="Dourado na grama" loading="lazy">
+            <img src="img/carpa-gigante.jpg" alt="Pescador com carpa" loading="lazy">
+            <img src="img/dourado.jpg" alt="Pescador com dourado" loading="lazy">
+            <span class="cap js-cap">Linha Vicentina · Farroupilha</span>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step on" data-cap="Linha Vicentina · Farroupilha"><span class="n">i.</span><h3>Reserve pelo WhatsApp</h3><p>Chame a gente, confira horários e garanta seu lugar à beira do lago.</p></div>
+          <div class="step" data-cap="Iscas & equipamento"><span class="n">ii.</span><h3>Prepare o equipamento</h3><p>Traga o seu ou consulte a lojinha do Refúgio — tire as dúvidas sobre iscas e regras com a equipe.</p></div>
+          <div class="step" data-cap="A briga"><span class="n">iii.</span><h3>Escolha o ponto e pesque</h3><p>Mais de 10 espécies no lago. Paciência, técnica e aquele puxão que faz o dia valer.</p></div>
+          <div class="step" data-cap="O troféu"><span class="n">iv.</span><h3>Foto, almoço e resenha</h3><p>Registre o troféu, passe no bar & restaurante e conte a história do peixe que (quase) escapou.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPEONATOS -->
+  <section class="champ" id="campeonatos">
+    <svg class="trophy-bg" aria-hidden="true"><use href="#medal"/></svg>
+    <div class="wrap">
+      <div class="champ-pic"><img src="img/medalhas.jpg" alt="Medalhas do torneio individual do Refúgio das Nogueiras" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">Campeonatos</span>
+        <h2 class="h2" style="margin-top:20px">Tem medalha<br>com o seu <em>nome?</em></h2>
+        <p>O Refúgio promove torneios de pesca esportiva ao longo da temporada. Entre no nosso grupo do WhatsApp para saber as próximas datas, regras e premiações em primeira mão.</p>
+        <div class="ctas">
+          <a class="btn btn-gold js-group magnetic" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Entrar no grupo</a>
+          <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>Ver no Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MURAL -->
+  <section class="mural">
+    <div class="wrap">
+      <div class="mural-head">
+        <div><span class="eyebrow">@refugio_dasnogueiras</span><h2 class="h2" style="margin-top:20px">O mural dos <em>troféus.</em></h2></div>
+        <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>Seguir no Instagram</a>
+      </div>
+      <div class="grid">
+        <a class="js-ig tall" href="#" target="_blank" rel="noopener"><img src="img/dourado-grama.jpg" alt="Dourado" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><img src="img/dourado-2.jpg" alt="Pescador com dourado" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><img src="img/carpa-hungara.jpg" alt="Pescador com carpa húngara" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+        <a class="js-ig tall" href="#" target="_blank" rel="noopener"><img src="img/lago.jpg" alt="Lago do Refúgio" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><img src="img/traira.jpg" alt="Pescador com traíra" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><img src="img/carpa-gigante.jpg" alt="Pescador com carpa" loading="lazy"><span class="ig"><svg><use href="#ig"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISITE -->
+  <section class="visit" id="visite">
+    <div class="wrap">
+      <span class="eyebrow">Como chegar</span>
+      <h2 class="h2" style="margin-top:20px">No interior de <em style="color:var(--walnut)">Farroupilha.</em></h2>
+      <div class="visit-grid">
+        <div class="map"><iframe class="js-map" title="Mapa do Refúgio das Nogueiras" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="info">
+          <h3>Refúgio das Nogueiras</h3>
+          <p class="addr js-addr"></p>
+          <table class="hours js-hours" aria-label="Horários de funcionamento"></table>
+          <div class="btns">
+            <a class="btn btn-ink js-route" href="#" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Como chegar</a>
+            <a class="btn btn-line-ink js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Tirar dúvidas</a>
+          </div>
+          <p class="note">Horários podem mudar em feriados e dias de campeonato — confirme pelo WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2 class="split">Bora <em>pescar?</em></h2>
+      <p>Reserve seu lugar à beira do lago e venha passar o dia no Refúgio.</p>
+      <div class="ctas">
+        <a class="btn btn-ink btn-big js-wa magnetic" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Reservar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#topo" class="brand"><svg><use href="#medal"/></svg><span>Refúgio das Nogueiras<small>Pesca esportiva</small></span></a>
+    <div class="cols">
+      <div><h4>Visite</h4><ul><li class="js-addr"></li><li><a class="js-route" href="#" target="_blank" rel="noopener">Abrir no mapa</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="js-group" href="#" target="_blank" rel="noopener">Grupo da comunidade</a></li><li><a class="js-ig" href="#" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="credit"><span>© <span class="js-year"></span> Refúgio das Nogueiras · Pesca Esportiva</span><a href="https://flypi.com.br" target="_blank" rel="noopener">Site por Flypi Enterprise</a></div>
+  </div>
+</footer>
+
+<a class="fab js-wa" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ===== CONFIG — tudo que o cliente pode mudar ===== */
+const CONFIG = {
+  whatsappLink: 'https://wa.me/5554981061529?text=' + encodeURIComponent('Olá! Vim pelo site e quero reservar para pescar no Refúgio 🎣'),
+  groupLink: 'https://chat.whatsapp.com/BaarBOyJ3eRCM9vXntA78j',
+  instagram: 'https://www.instagram.com/refugio_dasnogueiras/',
+  address: 'Interior — Linha Vicentina, Farroupilha · RS, 95181-899',
+  mapsQuery: 'Refúgio das Nogueiras - Pesca Esportiva, Farroupilha',
+  coords: '-29.2202833,-51.3836698',
+  // 0 = domingo; horas decimais; null = fechado (fonte: perfil no Google, out/2026)
+  hours: { 0: [7.5, 20], 1: [7.5, 18], 2: null, 3: [7.5, 18], 4: [7.5, 18], 5: [7.5, 22], 6: [7.5, 22] },
+};
+
+/* ===== links e dados ===== */
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+$$('.js-wa').forEach(a => a.href = CONFIG.whatsappLink);
+$$('.js-group').forEach(a => a.href = CONFIG.groupLink);
+$$('.js-ig').forEach(a => a.href = CONFIG.instagram);
+$$('.js-route').forEach(a => a.href = 'https://www.google.com/maps/dir/?api=1&destination=' + CONFIG.coords);
+$$('.js-addr').forEach(e => e.textContent = CONFIG.address);
+$$('.js-year').forEach(e => e.textContent = new Date().getFullYear());
+document.querySelector('.js-map').src = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapsQuery) + '&output=embed';
+
+/* ===== horários e status ao vivo (fuso de SP) ===== */
+const DAYS = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+const fmt = h => Math.floor(h) + 'h' + (h % 1 ? String(Math.round(h % 1 * 60)).padStart(2, '0') : '');
+function spNow() {
+  const p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+  const g = t => p.find(x => x.type === t).value;
+  return { d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')), h: (+g('hour') % 24) + g('minute') / 60 };
+}
+function status() {
+  const { d, h } = spNow(), today = CONFIG.hours[d];
+  if (today && h >= today[0] && h < today[1]) return { open: true, label: 'Aberto agora · até ' + fmt(today[1]) };
+  for (let i = 0; i < 8; i++) {
+    const dd = (d + i) % 7, r = CONFIG.hours[dd];
+    if (r && (i > 0 || h < r[0])) return { open: false, label: 'Fechado · abre ' + (i === 0 ? 'hoje' : i === 1 ? 'amanhã' : DAYS[dd].toLowerCase()) + ' às ' + fmt(r[0]) };
+  }
+  return { open: false, label: 'Consulte horários' };
+}
+const st = status(), stEl = document.querySelector('.js-status');
+stEl.classList.toggle('open', st.open); stEl.querySelector('span').textContent = st.label;
+const today = spNow().d;
+document.querySelector('.js-hours').innerHTML = [1, 2, 3, 4, 5, 6, 0].map(i => {
+  const r = CONFIG.hours[i];
+  return `<tr class="${i === today ? 'today' : ''}"><td>${DAYS[i]}</td><td>${r ? fmt(r[0]) + ' – ' + fmt(r[1]) : 'Fechado'}</td></tr>`;
+}).join('');
+
+/* ===== animação ===== */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+gsap.registerPlugin(ScrollTrigger);
+
+// quebra títulos em palavras com máscara
+$$('.split').forEach(el => {
+  const walk = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.append(' '); return; }
+        const w = document.createElement('span'); w.className = 'w';
+        const i = document.createElement('span'); i.textContent = part; w.append(i); frag.append(w);
+      });
+      n.replaceWith(frag);
+    } else walk(n);
+  });
+  walk(el);
+});
+// manifesto palavra a palavra
+$$('.js-words').forEach(el => {
+  const walk = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.append(part); return; }
+        const s = document.createElement('span'); s.className = 'mw'; s.textContent = part; frag.append(s);
+      });
+      n.replaceWith(frag);
+    } else walk(n);
+  });
+  walk(el);
+});
+
+let lenis = null;
+if (!reduce) {
+  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href'); if (id.length < 2) return;
+  const t = document.querySelector(id); if (!t) return;
+  e.preventDefault();
+  lenis ? lenis.scrollTo(t, { offset: id === '#topo' ? 0 : -40, duration: 1.4 }) : t.scrollIntoView();
+}));
+
+// nav: some ao descer, volta ao subir
+const nav = document.querySelector('.nav'), fab = document.querySelector('.fab');
+let lastY = 0;
+const onScroll = y => {
+  nav.classList.toggle('solid', y > 60);
+  nav.classList.toggle('hide', y > lastY && y > innerHeight * .8);
+  fab.classList.toggle('show', y > innerHeight * .7);
+  lastY = y;
+};
+lenis ? lenis.on('scroll', ({ scroll }) => onScroll(scroll)) : addEventListener('scroll', () => onScroll(scrollY), { passive: true });
+
+if (reduce) {
+  document.querySelector('.loader').remove();
+} else {
+  /* ----- loader ----- */
+  lenis.stop();
+  const ct = { v: 0 }, ctEl = document.querySelector('.ct');
+  const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  gsap.set('.hero .w>span', { yPercent: 115 });
+  gsap.set('.hero .fade-up, .hero .status', { y: 30, opacity: 0 });
+  gsap.set('.hero-art .ph1', { clipPath: 'inset(100% 0 0 0 round 22px)' });
+  gsap.set('.hero-art .ph2', { y: 80, opacity: 0, rotate: -14 });
+  gsap.set('.hero-art .seal', { scale: 0, opacity: 0 });
+  intro
+    .to('.loader .medal .draw', { strokeDashoffset: 0, duration: 1.1, stagger: .12, ease: 'power2.inOut' })
+    .to('.loader .medal text, .loader .medal use', { opacity: 1, duration: .5 }, '-=.6')
+    .to(ct, { v: 100, duration: 1.5, ease: 'power2.inOut', onUpdate: () => ctEl.textContent = Math.round(ct.v) }, 0)
+    .to('.loader', { yPercent: -100, duration: .9, ease: 'power4.inOut' }, '+=.15')
+    .to('.hero .w>span', { yPercent: 0, duration: 1.1, stagger: .06 }, '-=.45')
+    .to('.hero .status', { y: 0, opacity: 1, duration: .8 }, '<.1')
+    .to('.hero-art .ph1', { clipPath: 'inset(0% 0 0 0 round 22px)', duration: 1.3, ease: 'expo.out' }, '<')
+    .to('.hero-art .ph2', { y: 0, opacity: 1, rotate: -6, duration: 1.2 }, '<.25')
+    .to('.hero-art .seal', { scale: 1, opacity: 1, duration: .9, ease: 'back.out(1.6)' }, '<.2')
+    .to('.hero .fade-up', { y: 0, opacity: 1, duration: .9, stagger: .1 }, '<-.4')
+    .add(() => { document.querySelector('.loader').remove(); lenis.start(); });
+
+  /* ----- hero: parallax e ondas ----- */
+  gsap.to('.hero-art .ph1 img', { yPercent: 12, scale: 1.08, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-art .ph2', { yPercent: -30, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero h1', { yPercent: -18, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  $$('.waves .wv').forEach((p, i) => gsap.fromTo(p, { x: 0 }, { x: -720, duration: 14 + i * 6, ease: 'none', repeat: -1 }));
+  if (fine) {
+    const art = document.querySelector('.hero-art');
+    document.querySelector('.hero').addEventListener('mousemove', e => {
+      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      gsap.to(art, { rotateY: x * 8, rotateX: -y * 8, transformPerspective: 900, duration: .8, ease: 'power2.out' });
+    });
+  }
+
+  /* ----- marquee com impulso da rolagem ----- */
+  const mq = gsap.to('.mq-track', { xPercent: -50, duration: 28, ease: 'none', repeat: -1 });
+  let dir = 1;
+  ScrollTrigger.create({
+    onUpdate(self) {
+      dir = self.direction;
+      const boost = Math.min(Math.abs(self.getVelocity()) / 250, 6);
+      gsap.to(mq, { timeScale: dir * (1 + boost), duration: .2, overwrite: true });
+      gsap.to(mq, { timeScale: dir, duration: 1.2, delay: .25 });
+    }
+  });
+
+  /* ----- manifesto: linha de pesca + palavras ----- */
+  gsap.set('.fline', { strokeDasharray: 1, strokeDashoffset: 1 });
+  gsap.to('.fline', { strokeDashoffset: 0, stagger: .3, ease: 'none', scrollTrigger: { trigger: '.manifesto', start: 'top 70%', end: 'bottom 70%', scrub: true } });
+  gsap.to('.js-words .mw', { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: '.js-words', start: 'top 78%', end: 'bottom 45%', scrub: true } });
+  $$('.js-count').forEach(el => {
+    const o = { v: 0 };
+    gsap.to(o, { v: +el.dataset.to, duration: 1.6, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(o.v), scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+  });
+  gsap.from('.stat', { y: 40, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.stats', start: 'top 85%' } });
+
+  /* ----- espécies: rolagem horizontal presa ----- */
+  const track = document.querySelector('.sp-track');
+  const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+  const hz = gsap.to(track, {
+    x: () => -dist(), ease: 'none',
+    scrollTrigger: { trigger: '.species', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 }
+  });
+  $$('.sp-card img').forEach(img => gsap.fromTo(img, { xPercent: -6 }, { xPercent: 6, ease: 'none', scrollTrigger: { trigger: img.parentElement, containerAnimation: hz, start: 'left right', end: 'right left', scrub: true } }));
+
+  /* ----- cartões empilhados ----- */
+  const cards = $$('.scard');
+  cards.forEach((c, i) => {
+    const next = cards[i + 1]; if (!next) return;
+    const st = { trigger: next, start: 'top bottom', end: 'top ' + parseFloat(getComputedStyle(c).top) + 'px', scrub: true };
+    gsap.to(c, { scale: .92, ease: 'none', scrollTrigger: st });
+    gsap.to(c.querySelector('.dim'), { opacity: .45, ease: 'none', scrollTrigger: { ...st } });
+  });
+  gsap.from('.exp-head > *', { y: 50, opacity: 0, duration: 1, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.exp-head', start: 'top 80%' } });
+
+  /* ----- campeonatos ----- */
+  gsap.fromTo('.champ-pic img', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.champ', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.to('.trophy-bg', { rotate: 40, ease: 'none', scrollTrigger: { trigger: '.champ', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.from('.champ-pic', { clipPath: 'inset(0 0 100% 0 round 26px)', duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.champ', start: 'top 70%' } });
+
+  /* ----- mural: revelação em cortina ----- */
+  ScrollTrigger.batch('.grid a', {
+    start: 'top 88%',
+    onEnter: b => gsap.fromTo(b, { clipPath: 'inset(100% 0 0 0 round 18px)' }, { clipPath: 'inset(0% 0 0 0 round 18px)', duration: 1.2, stagger: .1, ease: 'expo.out', overwrite: true }),
+  });
+
+  /* ----- títulos de seção ----- */
+  $$('section:not(.hero) .h2').forEach(h => gsap.from(h, { y: 60, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } }));
+  gsap.set('.final .w>span', { yPercent: 115 });
+  gsap.to('.final .w>span', { yPercent: 0, duration: 1.2, stagger: .08, ease: 'power4.out', scrollTrigger: { trigger: '.final', start: 'top 70%' } });
+  gsap.from('.map', { clipPath: 'inset(0 100% 0 0 round 24px)', duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.visit-grid', start: 'top 80%' } });
+
+  /* ----- botões magnéticos ----- */
+  if (fine) $$('.magnetic').forEach(b => {
+    b.addEventListener('mousemove', e => {
+      const r = b.getBoundingClientRect();
+      gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .3, y: (e.clientY - r.top - r.height / 2) * .4, duration: .4, ease: 'power3.out' });
+    });
+    b.addEventListener('mouseleave', () => gsap.to(b, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }));
+  });
+
+  addEventListener('load', () => ScrollTrigger.refresh());
+}
+
+/* ----- passos do dia: a foto troca conforme o passo (também sem animação) ----- */
+const frames = $$('.frame img'), cap = document.querySelector('.js-cap');
+$$('.step').forEach((s, i, all) => ScrollTrigger.create({
+  trigger: s, start: 'top 60%', end: 'bottom 60%',
+  onToggle: self => {
+    if (!self.isActive) return;
+    all.forEach((x, j) => x.classList.toggle('on', j === i));
+    frames.forEach((f, j) => f.classList.toggle('on', j === i));
+    cap.textContent = s.dataset.cap;
+  }
+}));
+</script>
+</body>
+</html>

@@ -174,7 +174,7 @@ section{position:relative}
 .mo.end{width:min(80vw,380px);align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:0 10px}
 .mo.end p{font:400 clamp(28px,2.8vw,38px)/1.15 var(--serif);color:var(--head)}
 .mo.end p em{color:var(--green)}
-@media (max-width:760px){.mo .ph{height:auto}.mo.l .ph{width:84vw}.mo.p .ph{width:62vw}.mo.s .ph{width:74vw}.mo figcaption{font-size:16px}}
+@media (max-width:760px){.mo-track{align-items:flex-start;gap:12px}.mo .ph,.mo.l .ph,.mo.p .ph,.mo.s .ph{width:76vw;height:auto;aspect-ratio:4/5}.mo figcaption{width:76vw;font-size:16px;min-height:2.6em;margin-top:10px}.mo.end{width:70vw;align-self:center;padding:0 4px}.mo.end p{font-size:28px}}
 
 .koi-pic{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:16/9;margin:-6px 0 24px}
 .koi-pic img{width:100%;height:120%;object-fit:cover;position:absolute;top:-10%}
@@ -319,7 +319,7 @@ footer a:hover{color:#fff}
   /* momentos */
   .moments{padding:84px 0 36px}
   .moments-head{margin-bottom:22px}
-  .moments-head .lead{display:none}
+  .moments-head .lead{font-size:15px}
   /* peixes: 2 colunas compactas */
   .fish-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
   .fcard{aspect-ratio:3/4}
@@ -852,7 +852,7 @@ if (reduce) {
   const moDist = () => Math.max(0, mo.scrollWidth - innerWidth);
   const moTw = gsap.to(mo, { x: () => -moDist(), ease: 'none', scrollTrigger: { trigger: '.moments', start: 'top top', end: () => '+=' + moDist(), pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 } });
   $$('.mo img').forEach(img => gsap.fromTo(img, { xPercent: -5 }, { xPercent: 5, ease: 'none', scrollTrigger: { trigger: img.closest('.mo'), containerAnimation: moTw, start: 'left right', end: 'right left', scrub: true } }));
-  $$('.mo .ph').forEach(ph => gsap.fromTo(ph, { clipPath: 'inset(12% 0 12% 0 round 6px)' }, { clipPath: 'inset(0% 0 0% 0 round 6px)', ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: moTw, start: 'left 95%', end: 'left 45%', scrub: true } }));
+  $$('.mo .ph').forEach(ph => gsap.fromTo(ph, { scale: .92, opacity: .55 }, { scale: 1, opacity: 1, ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: moTw, start: 'left 100%', end: 'left 55%', scrub: true } }));
   gsap.fromTo('.koi-pic img', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.koi-pic', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   /* galeria: duas fileiras andando em sentidos opostos com a rolagem */
